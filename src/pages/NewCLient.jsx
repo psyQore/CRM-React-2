@@ -1,5 +1,13 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Form } from "react-router-dom";
 import FormNewClient from "../components/FormNewClient";
+
+export async function action({ request }){
+  const formData = await request.formData();
+
+  const data = Object.fromEntries(formData);
+
+  console.log(data)
+}
 
 const NewCLient = () => {
   const navigate = useNavigate();
@@ -21,7 +29,9 @@ const NewCLient = () => {
       </div>
 
       <div className="bg-white shadow rounded-md md:w-3/4 mx-auto px-5 py-10 mt-20">
-        <form>
+        <Form
+          method="post"
+        >
           <FormNewClient />
 
           <input
@@ -29,7 +39,7 @@ const NewCLient = () => {
             className="mt-5 w-full bg-blue-700 p-3 uppercase font-bold text-white text-lg hover:bg-blue-800 cursor-pointer"
             value="Registrar Cliente"
           />
-        </form>
+        </Form>
       </div>
     </>
   );
