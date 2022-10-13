@@ -11,11 +11,11 @@ const Client = ({ client }) => {
       <td className="p-6">
         <p className="text-gray-600">
           <span className="text-gray-800 uppercase font-bold">Email: </span>
-          {email}{" "}
+          {email}
         </p>
         <p className="text-gray-600">
           <span className="text-gray-800 uppercase font-bold">Tel: </span>
-          {phone}{" "}
+          {phone}
         </p>
       </td>
 
